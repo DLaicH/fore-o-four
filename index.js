@@ -1,5 +1,6 @@
 import { gEl, sContent } from './util.js';
 import { Ball } from './ball.js';
+import { Course } from './course.js';
 
 const main = gEl('main');
 

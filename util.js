@@ -2,7 +2,7 @@ export const map = fn => coll => coll.map(fn),
 
 flow = fns => t => fns.reduce((p, fn) => fn(p), t),
 
-gEl = document.getElementById,
+gEl = id => document.getElementById(id),
 
 cEl = (tag, attrs, content) => {
 	return flow([
@@ -41,7 +41,7 @@ sContent = content => el => {
 			content = [content];
 		}
 		
-		for (child of content) {
+		for (const child of content) {
 			el.appendChild(child);
 		}
 	}
@@ -50,10 +50,12 @@ sContent = content => el => {
 };
 
 export class Component {
-	constructor() {
+	constructor(id) {
 		this.el = cEl('div', {
-			id: 'ball',
-			class: 'ball'
+			id,
+			class: id
 		});
+		
+		this.id = id;
 	}
 };

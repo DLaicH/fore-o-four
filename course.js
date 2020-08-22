@@ -1,7 +1,7 @@
-import { Component } from './util';
+import { Component } from './util.js';
 
 export class Course extends Component {
 	constructor() {
-		super();
+		super('course');
 	}
 }
