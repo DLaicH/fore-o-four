@@ -1,6 +1,6 @@
 import { Component } from './util';
 
-export class Ball extends Component {
+export class Course extends Component {
 	constructor() {
 		super();
 	}

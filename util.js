@@ -47,4 +47,13 @@ sContent = content => el => {
 	}
 	
 	return el;
-}
+};
+
+export class Component {
+	constructor() {
+		this.el = cEl('div', {
+			id: 'ball',
+			class: 'ball'
+		});
+	}
+};
