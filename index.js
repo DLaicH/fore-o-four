@@ -8,3 +8,7 @@ const ball = new Ball();
 const course = new Course();
 
 sContent([course.el, ball.el])(main);
+
+setTimeout(() => {
+    ball.hit();
+}, 2000);
