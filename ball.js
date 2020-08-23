@@ -7,9 +7,23 @@ export class Ball extends Component {
 	
 	hit() {
 		this.el.animate([
-			{transform: 'translate3d(0, 0, 0)', easing: 'ease-in-out'},
-			{transform: 'translate3d(0, -12rem, 4rem)', easing: 'ease-in-out'},
-			{transform: 'translate3d(0, -24rem, 0)', easing: 'ease-in-out'}
-		], 2000);
+			{transform: 'translate3d(0, 0, 0)'},
+			{transform: 'translate3d(0, -24rem, 0)'}
+		], {
+			duration: 2000,
+			composite: 'accumulate'
+		})
+		.onfinish = () => {
+			this.el.style.transform = 'translate3d(0, -24rem, 0)';
+		};
+		
+		this.el.animate([
+			{transform: 'translateZ(0)', easing: 'cubic-bezier(0.0, 0.0, 0.58, 1.0)'},
+			{transform: 'translateZ(4rem)', easing: 'cubic-bezier(0.42, 0.0, 1.0, 1.0)'},
+			{transform: 'translateZ(0)'}
+		], {
+			duration: 2000,
+			composite: 'accumulate'
+		});
 	}
 }
