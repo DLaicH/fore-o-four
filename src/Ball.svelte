@@ -1,12 +1,9 @@
-import { Component } from './util.js';
+<script>
+	let el;
+	export let hit;
 
-export class Ball extends Component {
-	constructor() {
-		super('ball');
-	}
-	
-	hit() {
-		this.el.animate([
+	$: if (hit) {
+		el.animate([
 			{transform: 'translate3d(0, 0, 0)'},
 			{transform: 'translate3d(0, -24rem, 0)'}
 		], {
@@ -14,10 +11,10 @@ export class Ball extends Component {
 			composite: 'accumulate'
 		})
 		.onfinish = () => {
-			this.el.style.transform = 'translate3d(0, -24rem, 0)';
+			el.style.transform = 'translate3d(0, -24rem, 0)';
 		};
-		
-		this.el.animate([
+
+		el.animate([
 			{transform: 'translateZ(0)', easing: 'cubic-bezier(0.0, 0.0, 0.58, 1.0)'},
 			{transform: 'translateZ(4rem)', easing: 'cubic-bezier(0.42, 0.0, 1.0, 1.0)'},
 			{transform: 'translateZ(0)'}
@@ -26,4 +23,8 @@ export class Ball extends Component {
 			composite: 'accumulate'
 		});
 	}
-}
+
+</script>
+
+<div class="ball" bind:this={el}></div>
+
