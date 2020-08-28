@@ -3,6 +3,11 @@
 	export let hit;
 
 	$: if (hit) {
+		doHit();
+	}
+
+	function doHit() {
+		console.log('doing hit');
 		el.animate([
 			{transform: 'translate3d(0, 0, 0)'},
 			{transform: 'translate3d(0, -24rem, 0)'}
