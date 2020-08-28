@@ -1,5 +1,6 @@
 <script>
 	let el;
+	let elZ;
 	export let hit;
 
 	$: if (hit) {
@@ -13,23 +14,25 @@
 			{transform: 'translate3d(0, -24rem, 0)'}
 		], {
 			duration: 2000,
-			composite: 'accumulate'
+			//composite: 'accumulate'
 		})
 		.onfinish = () => {
 			el.style.transform = 'translate3d(0, -24rem, 0)';
 		};
 
-		el.animate([
+		elZ.animate([
 			{transform: 'translateZ(0)', easing: 'cubic-bezier(0.0, 0.0, 0.58, 1.0)'},
 			{transform: 'translateZ(4rem)', easing: 'cubic-bezier(0.42, 0.0, 1.0, 1.0)'},
 			{transform: 'translateZ(0)'}
 		], {
 			duration: 2000,
-			composite: 'accumulate'
+			//composite: 'accumulate'
 		});
 	}
 
 </script>
 
-<div class="ball" bind:this={el}></div>
+<div class="ballZ" bind:this={elZ}>
+	<div class="ball" bind:this={el}></div>
+</div>
 
