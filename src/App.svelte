@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Ball from './Ball.svelte';
 
 	let hit;
