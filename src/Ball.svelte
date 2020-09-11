@@ -3,6 +3,7 @@
 	import { quadIn, quadOut, cubicOut } from 'svelte/easing';
 
 	import { tilt, rotation } from './store/world';
+	import { ballX, ballY } from './store/ball';
 
 	let el;
 	let elZ;
@@ -12,19 +13,6 @@
 	$: counterTilt = 360 - $tilt;
 	let counterRotation = 0;
 	$: counterRotation = 360 - $rotation;
-
-	const x = tweened(0, {
-		duration: 400,
-		easing: cubicOut
-	});
-	const y = tweened(0, {
-		duration: 400,
-		easing: cubicOut
-	});
-	const z = tweened(0, {
-		duration: 400,
-		easing: quadIn
-	});
 
 	$: if (hit) {
 		doHit();
@@ -43,6 +31,8 @@
 		})
 		.onfinish = () => {
 			el.style.transform = 'translate3d(-16rem, 16rem, 0)';
+			ballX.set(-16);
+			ballY.set(16);
 		};
 
 		elZ.animate([
@@ -86,7 +76,10 @@
 
 <div class="ball-z" bind:this={elZ}>
 	<div class="ball-plane" bind:this={el}>
-		<div class="ball" style="transform: rotateZ({counterRotation}deg) rotate3d(1, 0, 0, {counterTilt}deg)">{$tilt}</div>
+		<div
+			class="ball"
+			style="transform: rotateZ({counterRotation}deg) rotate3d(1, 0, 0, {counterTilt}deg)"
+		></div>
 	</div>
 </div>
 
