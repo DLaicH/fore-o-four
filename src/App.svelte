@@ -32,7 +32,7 @@
 
 <div class="layer">
 	<div class="world-tilt" style="transform: rotate3d(1, 0, 0, {$tilt}deg)">
-		<div class="world-plane" style="transform: translate3d({$worldX}rem, {$worldY}rem, {$worldZ}rem) rotate3d(0, 0, 1, {$rotation}deg)">
+		<div class="world-plane" style="transform: rotate3d(0, 0, 1, {$rotation}deg) translate3d({$worldX}rem, {$worldY}rem, {$worldZ}rem)">
 			<div class="course">
 				<svg class="fairway" viewBox="0 0 100 100">
 					<polygon class="fairway-poly" points="100,100 0,100 0,0 100,0" fill="#44aa55"/>
@@ -44,7 +44,7 @@
 
 <div class="layer">
 	<div class="world-tilt" style="transform: rotate3d(1, 0, 0, {$tilt}deg)">
-		<div class="world-plane" style="transform: translate3d({$worldX}rem, {$worldY}rem, {$worldZ}rem) rotate3d(0, 0, 1, {$rotation}deg)">
+		<div class="world-plane" style="transform: rotate3d(0, 0, 1, {$rotation}deg) translate3d({$worldX}rem, {$worldY}rem, {$worldZ}rem)">
 			<Ball {hit} />
 		</div>
 	</div>
