@@ -18,14 +18,6 @@
         position: absolute;
     }
 
-    .fairway {
-        position: absolute;
-    }
-
-    .fairway-poly {
-        fill: #4a5;
-    }
-
     .tee {
         position: absolute;
         width: 10rem;
@@ -49,6 +41,7 @@
         background-color: #171717;
         left: -1rem;
         top: -1rem;
+        transform: translateZ(0);
     }
 
 </style>
