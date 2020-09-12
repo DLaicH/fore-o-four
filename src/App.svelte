@@ -1,20 +1,9 @@
 <script lang="ts">
+	import { get } from 'svelte/store';
 	import { tilt, rotation, worldX, worldY, worldZ } from './store/world';
+	import { doHit, ballIsMoving } from './store/ball';
 
 	import Ball from './Ball.svelte';
-
-	let hit;
-	let tilted = false;
-	let turned = false;
-	let angle = 0;
-
-	setTimeout(() => {
-		hit = {
-			direction: Math.random() * 2 * Math.PI,
-			power: Math.random(),
-			angle: Math.PI / 4
-		};
-	}, 5000);
 
 	setTimeout(() => tilt.set(45), 2000);
 	// setTimeout(() => turned = true, 5000);
@@ -22,6 +11,22 @@
 	function handleKeydown(event) {
 		if (event.key == 'ArrowLeft') rotation.update(angle => angle - 9);
 		if (event.key == 'ArrowRight') rotation.update(angle => angle + 9);
+		if (event.key == ' ' && !get(ballIsMoving)) hitInCurrentDirection();
+	}
+
+	function hitInCurrentDirection() {
+		let direction = get(rotation) - 90;
+
+		while (direction < 0) direction += 360;
+		while (direction >= 360) direction -= 360;
+
+		const hit = {
+			direction: direction * Math.PI / 180,
+			power: Math.random(),
+			angle: Math.PI / 4
+		};
+
+		doHit(hit);
 	}
 </script>
 
@@ -39,7 +44,7 @@
 				</svg>
 			</div>
 
-			<Ball {hit} />
+			<Ball />
 		</div>
 	</div>
 </div>
