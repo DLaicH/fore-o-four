@@ -41,7 +41,7 @@
 		<div class="world-plane" style="transform: rotate3d(0, 0, 1, {$rotation}deg) translate3d({$worldX}rem, {$worldY}rem, {$worldZ}rem)">
 			<Ball />
 
-			<Course teeCoords={[0, 0]} holeCoords={[0, -100]} />
+			<Course teeCoords={[0, 0]} holeCoords={[60, -200]} />
 		</div>
 	</div>
 </div>

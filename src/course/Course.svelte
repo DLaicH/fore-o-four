@@ -1,4 +1,6 @@
 <script>
+    import Fairway from './Fairway.svelte';
+
     export let teeCoords = [];
     export let holeCoords = [];
 
@@ -55,9 +57,7 @@
     <div class="green" style="width: {greenRadius}rem; height: {greenRadius}rem; left: {greenOffsetX}rem; top: {greenOffsetY}rem"></div>
     <div class="hole"></div>
 
-    <svg class="fairway" viewBox="0 0 100 100">
-        <polygon class="fairway-poly" points="100,100 0,100 0,0 100,0"/>
-    </svg>
+    <Fairway {relativeTeeCoords} />
 
     <div class="tee" style="left: {relativeTeeCoords[0]}rem; top: {relativeTeeCoords[1]}rem"></div>
 </div>
