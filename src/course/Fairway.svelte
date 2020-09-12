@@ -3,10 +3,10 @@
 
     export let relativeTeeCoords = [];
 
-    const MIN_SECTION_LENGTH = 20;
+    const MIN_SECTION_LENGTH = 50;
     const MAX_TEE_DISTANCE = 30;
     const MIN_TEE_DISTANCE = 20;
-    const MAX_RANDOM_ANGLE = Math.PI * 0.9;
+    const MAX_RANDOM_ANGLE = Math.PI * 0.999;
 
     let fairwayPoints = [];
     let fairwayOffset = [0, 0];
