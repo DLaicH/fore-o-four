@@ -54,8 +54,10 @@
 
 	.ball-plane {
 		position: absolute;
-		top: 66vh;
-		left: 50vw;
+		/* top: 66vh;
+		left: 50vw; */
+		top: -0.5rem;
+		left: -0.5rem;
 		width: 1rem;
 		height: 1rem;
 		background-color: rgba(0, 0, 0, 0.5);

@@ -27,31 +27,34 @@ main {
 
 .world-tilt {
     transform: rotate3d(1, 0, 0, 0deg);
-    transform-origin: 50vw 66vh;
+    /* transform-origin: 50vw 66vh; */
+    transform-origin: 0 0;
+    top: 66vh;
+    left: 50vw;
     transform-style: preserve-3d;
     position: absolute;
     /* transition: transform 3s; */
 }
 
 .world-plane {
-    transform-origin: 50vw 66vh;
+    /* transform-origin: 50vw 66vh; */
+    /* transform-origin: 0 0; */
     transform-style: preserve-3d;
     position: absolute;
+    
     /* transition: transform 0.1s; */
 }
 
 .course {
     background-color: #070;
     position: absolute;
-    width: 100vw;
-    height: 100vh;
 }
 
 .fairway {
     position: absolute;
-    top: 40vh;
-    right: 30vw;
-    width: 40vw;
+    top: 0;
+    left: 0;
+    width: 20rem;
 }
 
 .fairway-poly {

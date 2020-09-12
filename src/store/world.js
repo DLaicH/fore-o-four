@@ -5,7 +5,8 @@ import { cubicInOut } from 'svelte/easing';
 import { ballX, ballY, ballZ } from './ball';
 
 export const tilt = tweened(0, {
-    duration: 400
+    duration: 400,
+    easing: cubicInOut
 });
 
 export const rotation = tweened(0, {
