@@ -22,7 +22,7 @@
 
 		const hit = {
 			direction: direction * Math.PI / 180,
-			power: Math.random(),
+			power: 50,
 			angle: Math.PI / 4
 		};
 

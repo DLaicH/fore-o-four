@@ -6,12 +6,16 @@ export const ballX = writable(0);
 export const ballY = writable(0);
 export const ballZ = writable(0);
 
+const GRAVITY = 40;
+
 export const ballIsMoving = writable(false);
 
-export function doHit({direction}) {
-    const duration = 2000;
-    const height = 12;
-    const distance = 48;
+export function doHit({power, direction, angle}) {
+    const duration = 2000 * power * Math.sin(angle) / GRAVITY;
+    const height = Math.pow(power, 2) * Math.pow(Math.sin(angle), 2) / ( GRAVITY * 2 );
+    const distance = Math.pow(power, 2) * Math.sin(angle * 2) / GRAVITY;
+
+    console.log({duration, height, distance});
 
     const initX = get(ballX);
     const initY = get(ballY);
