@@ -5,7 +5,7 @@
     export let holeCoords = [];
 
     let relativeTeeCoords = [];
-    const greenRadius = Math.random() * 10 + 15;
+    const greenRadius = Math.random() * 20 + 20;
     const greenOffsetX = Math.random() * greenRadius * 0.25 - greenRadius * 0.5;
     const greenOffsetY = Math.random() * greenRadius * 0.25 - greenRadius * 0.5;
 

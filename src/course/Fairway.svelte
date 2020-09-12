@@ -91,6 +91,7 @@
     .fairway {
         position: absolute;
         font-size: 1rem;
+        z-index: -1;
     }
 
     /* .fairway-poly {
