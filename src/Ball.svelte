@@ -58,6 +58,8 @@
 		left: 50vw;
 		width: 1rem;
 		height: 1rem;
+		background-color: rgba(0, 0, 0, 0.5);
+		border-radius: 50%;
 		transform: translate3d(0, 0, 0);
 		perspective: 50rem;
 		transform-style: preserve-3d;
@@ -69,16 +71,16 @@
 		background-color: #fff;
 		border-radius: 50%;
 		position: absolute;
-		transform: rotate3d(1, 0, 0, 0);
+		/* transform: translate3d(0, 0, 0.5rem) rotate3d(1, 0, 0, 0); */
 		perspective: 50rem;
 	}
 </style>
 
-<div class="ball-z" bind:this={elZ}>
-	<div class="ball-plane" bind:this={el}>
+<div class="ball-plane" bind:this={el}>
+	<div class="ball-z" bind:this={elZ}>
 		<div
 			class="ball"
-			style="transform: rotateZ({counterRotation}deg) rotate3d(1, 0, 0, {counterTilt}deg)"
+			style="transform: translate3d(0, 0, 0.5rem) rotateZ({counterRotation}deg) rotate3d(1, 0, 0, {counterTilt}deg)"
 		></div>
 	</div>
 </div>
