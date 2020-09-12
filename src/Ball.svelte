@@ -54,7 +54,7 @@
 
 	.ball-plane {
 		position: absolute;
-		top: 50vh;
+		top: 66vh;
 		left: 50vw;
 		width: 1rem;
 		height: 1rem;

@@ -27,14 +27,14 @@ main {
 
 .world-tilt {
     transform: rotate3d(1, 0, 0, 0deg);
-    transform-origin: 50vw 50vh;
+    transform-origin: 50vw 66vh;
     transform-style: preserve-3d;
     position: absolute;
     /* transition: transform 3s; */
 }
 
 .world-plane {
-    transform-origin: 50vw 50vh;
+    transform-origin: 50vw 66vh;
     transform-style: preserve-3d;
     position: absolute;
     /* transition: transform 0.1s; */
