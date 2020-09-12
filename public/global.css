@@ -44,19 +44,3 @@ main {
     
     /* transition: transform 0.1s; */
 }
-
-.course {
-    background-color: #070;
-    position: absolute;
-}
-
-.fairway {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 20rem;
-}
-
-.fairway-poly {
-    fill: #4a5;
-}
